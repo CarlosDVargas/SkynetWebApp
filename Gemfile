@@ -77,3 +77,5 @@ end
 gem "devise", "~> 4.8"
 
 gem "byebug", "~> 11.1"
+
+gem "image_processing", "~> 1.12"
