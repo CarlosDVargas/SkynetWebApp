@@ -1,0 +1,56 @@
+<div class="row h-100">
+  <div class="col-4 h-100 position-relative" style="background: #BD3D34">
+    <div class="container h-50 position-absolute top-50 start-50 translate-middle w-75">
+      <div class="row">
+        <%=image_tag("logo.png", :alt => "logo") %>
+      </div>
+      <div class="row text-center">
+        <h1 class="text-white">SKYNET</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-8 h-100 position-relative">
+    <div class="container">
+      <%=render 'layouts/devise_errors' %>
+    </div>
+    <div class="container position-absolute top-50 start-50 translate-middle w-50">
+      <h2>Ingreso al sistema</h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="mb-3">
+          <%= f.label :email, class: "form-label" %><br/>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :password, class: "form-label" %><br/>
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="mb-3">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+        <div class="mb-5">
+          <%= render "devise/shared/links" %>
+        </div>
+        <div class="position-absolute bottom-0 end-0 mt-3">
+          <div class="btn-group">
+            <%= link_to "Regresar", :back, class: "btn btn-secondary" %>
+            <%= f.submit "Iniciar sesión", class: "btn btn-danger" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+

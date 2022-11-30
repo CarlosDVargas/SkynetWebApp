@@ -2,14 +2,18 @@
   <div class="position-absolute top-50 start-50 translate-middle">
     <div class="container-fluid" align="center">
       <div class="row">
-        <img src="app/assets/images/logo.svg" class="img-fluid" alt="Skynet Logo">
+        <%=image_tag("logo.png", :alt => "logo") %>
       </div>
       <div class="row">
         <h1 class="text-center text-white">SKYNET</h1>
       </div>
       <div class="row mt-3">
-        <%= link_to "Ingresar", root_path, class:"btn bg-white"%>
+        <%= link_to "Ingresar", new_user_session_path, class:"btn bg-white"%>
       </div>
     </div>
   </div>
 </div>
+<% if current_user %>
+  <%= current_user.username %>
+  <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+<% end %>
