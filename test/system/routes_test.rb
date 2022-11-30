@@ -14,6 +14,8 @@ class RoutesTest < ApplicationSystemTestCase
     visit routes_url
     click_on "New route"
 
+    fill_in "Country", with: @route.country_id
+    fill_in "Description", with: @route.description
     click_on "Create Route"
 
     assert_text "Route was successfully created"
@@ -24,6 +26,8 @@ class RoutesTest < ApplicationSystemTestCase
     visit route_url(@route)
     click_on "Edit this route", match: :first
 
+    fill_in "Country", with: @route.country_id
+    fill_in "Description", with: @route.description
     click_on "Update Route"
 
     assert_text "Route was successfully updated"

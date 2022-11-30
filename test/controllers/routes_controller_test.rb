@@ -17,7 +17,7 @@ class RoutesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create route" do
     assert_difference("Route.count") do
-      post routes_url, params: { route: {  } }
+      post routes_url, params: { route: { country_id: @route.country_id, description: @route.description } }
     end
 
     assert_redirected_to route_url(Route.last)
@@ -34,7 +34,7 @@ class RoutesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update route" do
-    patch route_url(@route), params: { route: {  } }
+    patch route_url(@route), params: { route: { country_id: @route.country_id, description: @route.description } }
     assert_redirected_to route_url(@route)
   end
 

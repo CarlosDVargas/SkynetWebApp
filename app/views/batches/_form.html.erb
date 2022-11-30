@@ -12,6 +12,26 @@
   <% end %>
 
   <div>
+    <%= form.label :product_id, style: "display: block" %>
+    <%= form.text_field :product_id %>
+  </div>
+
+  <div>
+    <%= form.label :operation_id, style: "display: block" %>
+    <%= form.text_field :operation_id %>
+  </div>
+
+  <div>
+    <%= form.label :current_operation, style: "display: block" %>
+    <%= form.text_field :current_operation %>
+  </div>
+
+  <div>
+    <%= form.label :units, style: "display: block" %>
+    <%= form.number_field :units %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

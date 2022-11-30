@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_194915) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_224928) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -40,12 +40,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_194915) do
   end
 
   create_table "batches", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "operation_id"
+    t.integer "product_id", null: false
+    t.integer "operation_id", null: false
     t.string "current_operation"
     t.integer "units"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["operation_id"], name: "index_batches_on_operation_id"
+    t.index ["product_id"], name: "index_batches_on_product_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -55,25 +57,27 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_194915) do
   end
 
   create_table "operations", force: :cascade do |t|
-    t.integer "route_id"
-    t.text "description"
+    t.string "description"
+    t.integer "route_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["route_id"], name: "index_operations_on_route_id"
   end
 
   create_table "products", force: :cascade do |t|
+    t.string "description"
     t.decimal "price", precision: 24, scale: 2
     t.decimal "cost", precision: 24, scale: 2
-    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "routes", force: :cascade do |t|
-    t.integer "country_id"
     t.text "description"
+    t.integer "country_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_routes_on_country_id"
   end
 
   create_table "users", force: :cascade do |t|
