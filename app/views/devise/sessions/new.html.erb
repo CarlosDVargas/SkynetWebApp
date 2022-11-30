@@ -2,7 +2,7 @@
   <div class="col-4 h-100 position-relative" style="background: #BD3D34">
     <div class="container h-50 position-absolute top-50 start-50 translate-middle w-75">
       <div class="row">
-        <%=image_tag("logo.png", :alt => "logo") %>
+        <%= image_tag("logo.png", :alt => "logo") %>
       </div>
       <div class="row text-center">
         <h1 class="text-white">SKYNET</h1>
@@ -11,7 +11,7 @@
   </div>
   <div class="col-8 h-100 position-relative">
     <div class="container">
-      <%=render 'layouts/devise_errors' %>
+      <%= render 'layouts/devise_errors' %>
     </div>
     <div class="container position-absolute top-50 start-50 translate-middle w-50">
       <h2>Ingreso al sistema</h2>
@@ -25,6 +25,10 @@
         <div class="mb-3">
           <%= f.label :password, class: "form-label" %><br/>
           <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.select :last_connected_country, options_for_select(@countries.collect { |c| [c.name, c.id] }), {}, class: "form-select" %>
         </div>
 
         <% if devise_mapping.rememberable? %>

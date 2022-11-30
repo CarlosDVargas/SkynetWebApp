@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+  before_action :configure_sign_in_params, only: [:create]
+  before_action :set_countries, only: [:new, :create]
 
   # GET /resource/sign_in
   def new
@@ -11,6 +12,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
+    @byebug
     super
   end
 
@@ -28,5 +30,10 @@ class Users::SessionsController < Devise::SessionsController
 
   def after_sign_in_path_for(resource)
     main_home_path
+  end
+
+  private
+  def set_countries
+    @countries = Country.all
   end
 end
