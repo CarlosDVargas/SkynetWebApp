@@ -17,7 +17,7 @@ class OperationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create operation" do
     assert_difference("Operation.count") do
-      post operations_url, params: { operation: {  } }
+      post operations_url, params: { operation: { description: @operation.description, route_id: @operation.route_id } }
     end
 
     assert_redirected_to operation_url(Operation.last)
@@ -34,7 +34,7 @@ class OperationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update operation" do
-    patch operation_url(@operation), params: { operation: {  } }
+    patch operation_url(@operation), params: { operation: { description: @operation.description, route_id: @operation.route_id } }
     assert_redirected_to operation_url(@operation)
   end
 

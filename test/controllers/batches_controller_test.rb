@@ -17,7 +17,7 @@ class BatchesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create batch" do
     assert_difference("Batch.count") do
-      post batches_url, params: { batch: {  } }
+      post batches_url, params: { batch: { current_operation: @batch.current_operation, operation_id: @batch.operation_id, product_id: @batch.product_id, units: @batch.units } }
     end
 
     assert_redirected_to batch_url(Batch.last)
@@ -34,7 +34,7 @@ class BatchesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update batch" do
-    patch batch_url(@batch), params: { batch: {  } }
+    patch batch_url(@batch), params: { batch: { current_operation: @batch.current_operation, operation_id: @batch.operation_id, product_id: @batch.product_id, units: @batch.units } }
     assert_redirected_to batch_url(@batch)
   end
 

@@ -14,6 +14,8 @@ class OperationsTest < ApplicationSystemTestCase
     visit operations_url
     click_on "New operation"
 
+    fill_in "Description", with: @operation.description
+    fill_in "Route", with: @operation.route_id
     click_on "Create Operation"
 
     assert_text "Operation was successfully created"
@@ -24,6 +26,8 @@ class OperationsTest < ApplicationSystemTestCase
     visit operation_url(@operation)
     click_on "Edit this operation", match: :first
 
+    fill_in "Description", with: @operation.description
+    fill_in "Route", with: @operation.route_id
     click_on "Update Operation"
 
     assert_text "Operation was successfully updated"

@@ -14,6 +14,10 @@ class BatchesTest < ApplicationSystemTestCase
     visit batches_url
     click_on "New batch"
 
+    fill_in "Current operation", with: @batch.current_operation
+    fill_in "Operation", with: @batch.operation_id
+    fill_in "Product", with: @batch.product_id
+    fill_in "Units", with: @batch.units
     click_on "Create Batch"
 
     assert_text "Batch was successfully created"
@@ -24,6 +28,10 @@ class BatchesTest < ApplicationSystemTestCase
     visit batch_url(@batch)
     click_on "Edit this batch", match: :first
 
+    fill_in "Current operation", with: @batch.current_operation
+    fill_in "Operation", with: @batch.operation_id
+    fill_in "Product", with: @batch.product_id
+    fill_in "Units", with: @batch.units
     click_on "Update Batch"
 
     assert_text "Batch was successfully updated"
