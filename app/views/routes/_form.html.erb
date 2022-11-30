@@ -1,0 +1,17 @@
+<%= form_with(model: route) do |form| %>
+  <% if route.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(route.errors.count, "error") %> prohibited this route from being saved:</h2>
+
+      <ul>
+        <% route.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
