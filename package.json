@@ -5,9 +5,9 @@
     "@hotwired/stimulus": "^3.1.1",
     "@hotwired/turbo-rails": "^7.2.4",
     "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.2",
-    "bootstrap-icons": "^1.10.1",
-    "esbuild": "^0.15.13",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.2",
+    "esbuild": "^0.15.16",
     "sass": "^1.56.1"
   },
   "scripts": {
