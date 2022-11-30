@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :operations
   resources :routes
   resources :countries
   devise_for :users, controllers: {
