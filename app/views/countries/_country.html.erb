@@ -1,0 +1,12 @@
+<div id="<%= dom_id country %>">
+  <p>
+    <strong>Name:</strong>
+    <%= country.name %>
+  </p>
+
+  <p>
+    <strong>Icon:</strong>
+    <%= link_to country.icon.filename, country.icon if country.icon.attached? %>
+  </p>
+
+</div>
