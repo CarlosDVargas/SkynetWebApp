@@ -1,16 +1,12 @@
-<div class="h-100 w-100" style="background-color: #BD3D34">
+<div class="h-100 w-100 primary-background">
   <div class="position-absolute top-50 start-50 translate-middle">
-    <div class="container-fluid" align="center">
-      <div class="row">
-        <%=image_tag("logo.png", :alt => "logo") %>
+      <div class="mb-5">
+        <%=image_tag("logo-inicio.svg", :alt => "logo") %>
       </div>
-      <div class="row">
-        <h1 class="text-center text-white">SKYNET</h1>
+      
+      <div class="text-center">
+        <%= link_to "Ingresar", new_user_session_path, class:"btn-inicio"%>
       </div>
-      <div class="row mt-3">
-        <%= link_to "Ingresar", new_user_session_path, class:"btn bg-white"%>
-      </div>
-    </div>
   </div>
 </div>
 <% if current_user %>
