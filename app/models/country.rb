@@ -3,4 +3,5 @@ class Country < ApplicationRecord
     attachable.variant :thumb, resize: "100x100"
   end
 
+  has_many :routes
 end
