@@ -4,6 +4,7 @@
   <div class="container mt-5">
     <p style="color: green"><%= notice %></p>
 
+    <%# -- Titulo de productos y boton de agregar -- %>
     <div>
       <%=image_tag("Products-title.svg", :alt => "products-title", :width => "80%",  :class => "mb-3") %>
       
@@ -13,13 +14,24 @@
           <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Agregar producto
       <% end %>
     </div>
+    <%# ------------- %>
 
+    <%# -- resultados de busqueda -- %>
+    <div class="d-flex align-items-center justify-content-center mt-5">
+      <div class="col-6">
+        <p><%= @products_length %> Resultados</p>
+      </div>
+      <div class="col-6 container text-end">
+        <%=image_tag("search-tools.svg", :alt => "search-tools", :width => "80%",  :class => "mb-3", :style => "margin-right: 5%;") %>
+      </div>
+    </div>
+    <%# ------------- %>
 
-    <div id="products" class="responsive-width mt-5">
-    
+    <%# -- tabla de productos -- %>
+    <div id="products" class="responsive-width mt-4">
       <table class="table table-bordered text-center">
         <tr>
-          <th>Código</th>
+          <th>Código del modelo</th>
           <th>Descripción</th>
           <th>Acciones</th>
         </tr>
@@ -31,15 +43,19 @@
             <td style="width: 40%; padding: 1rem;">
               <%= link_to "Detalles", product_path(product), class: "btn-ver" %>
               <%= link_to "Modificar", edit_product_path(product), class: "btn-modificar" %>
-              <%= link_to "Eliminar", product_path(product), data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro/a que deseas eliminar este producto?' }, class: "btn-eliminar" %>
+              <%= link_to "Eliminar", product_path(product), data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro(a) que deseas eliminar este producto?' }, class: "btn-eliminar" %>
             </td>
           </tr>
         <% end %>    
       </table>
-    
+
+      <%# -- paginacion -- %>
       <div class="flickr_pagination my-5 responsive-width">
         <%= will_paginate @products, :container => false %>
       </div>
+      <%# ------------- %>
+
     </div>
+    <%# ------------- %>
   </div>
 </div>
