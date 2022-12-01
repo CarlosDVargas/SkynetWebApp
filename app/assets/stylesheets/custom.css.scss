@@ -7,6 +7,8 @@
     --dark-darker: #1f1f1f;
     --gray: #aaaaaa;
     --gray-dark: #999999;
+    --light-blue: #658DC3;
+    --light-blue-dark: #4E75AC;
 }
 
 * {
@@ -22,7 +24,7 @@ body {
     font-size: 16px;
     font-family: 'Ubuntu', sans-serif;
     line-height: 1.5;
-    color: #333;
+    color: var(--dark);
 }
 
 .primary-background {
@@ -117,6 +119,63 @@ body {
     color: var(--secondary-dark);
 }
 
+.btn-ver {
+    background: var(--light-blue);
+    color: var(--secondary);
+    border: 1px solid #f8f8f8c4;
+    border-radius: 5px;
+    padding: 10px 18px;
+    transition: all 0.3s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-ver:hover {
+    background: var(--light-blue-dark);
+    color: var(--secondary);
+}
+
+.btn-modificar {
+    background: var(--dark);
+    color: var(--secondary);
+    border: 1px solid #f8f8f8c4;
+    border-radius: 5px;
+    padding: 10px 18px;
+    transition: all 0.3s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-modificar:hover {
+    background: var(--dark-darker);
+    color: var(--secondary-dark);
+}
+
+.btn-eliminar {
+    background: var(--primary);
+    color: var(--secondary);
+    border: 1px solid #f8f8f8c4;
+    border-radius: 5px;
+    padding: 10px 18px;
+    transition: all 0.3s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-eliminar:hover {
+    background: var(--primary-dark);
+    color: var(--secondary);
+}
+
 .login-left {
     background: var(--primary);
     height: 100vh;
@@ -133,3 +192,10 @@ body {
     font-weight: 100;
     color: var(--gray);
 }
+
+.responsive-width {
+    width: 96.6%;
+}
+
+
+
