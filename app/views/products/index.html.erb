@@ -13,17 +13,32 @@
           <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Agregar producto
       <% end %>
     </div>
-    
-    <div id="products">
-      <% @products.each do |product| %>
-        <%= render product %>
-        <p>
-          <%= link_to "Show this product", product %>
-        </p>
-      <% end %>
 
-      <div class="flickr_pagination mb-4">
-        <%= will_paginate @articles, :container => false %>
+
+    <div id="products" class="responsive-width mt-5">
+    
+      <table class="table table-bordered text-center">
+        <tr>
+          <th>Código</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+    
+        <% @products.each do |product| %>
+          <tr>
+            <td style="width: 20%;"><%= product.id %></td>
+            <td style="width: 40%;"><%= product.description %></td>
+            <td style="width: 40%; padding: 1rem;">
+              <%= link_to "Detalles", product_path(product), class: "btn-ver" %>
+              <%= link_to "Modificar", edit_product_path(product), class: "btn-modificar" %>
+              <%= link_to "Eliminar", product_path(product), data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro/a que deseas eliminar este producto?' }, class: "btn-eliminar" %>
+            </td>
+          </tr>
+        <% end %>    
+      </table>
+    
+      <div class="flickr_pagination my-5 responsive-width">
+        <%= will_paginate @products, :container => false %>
       </div>
     </div>
   </div>
