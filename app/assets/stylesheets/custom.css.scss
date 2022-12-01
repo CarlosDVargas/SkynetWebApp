@@ -3,9 +3,10 @@
     --primary-dark: #A32F27;
     --secondary: #F8F8F8;
     --secondary-dark: #E8E8E8;
+    --dark: #494949;
+    --dark-darker: #1f1f1f;
     --gray: #aaaaaa;
     --gray-dark: #999999;
-    --dark: #5a5a5a;
 }
 
 * {
@@ -14,6 +15,7 @@
 
 html {
     box-sizing: border-box;
+    background-color: var(--secondary);
 }
 
 body {
@@ -25,6 +27,10 @@ body {
 
 .primary-background {
     background-color: var(--primary);
+}
+
+.secondary-background {
+    background-color: var(--secondary);
 }
 
 .btn-inicio {
@@ -91,6 +97,26 @@ body {
     color: var(--secondary);
 }
 
+.btn-agregar {
+    background: var(--dark);
+    color: var(--secondary);
+    border: 1px solid #f8f8f8c4;
+    border-radius: 5px;
+    padding: 10px 18px;
+    font-weight: bold;
+    transition: all 0.3s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-agregar:hover {
+    background: var(--dark-darker);
+    color: var(--secondary-dark);
+}
+
 .login-left {
     background: var(--primary);
     height: 100vh;
@@ -100,4 +126,10 @@ body {
     background: var(--secondary);
     color: var(--dark);
     height: 100vh;
+}
+
+.vertical-divider {
+    font-size: 25px;
+    font-weight: 100;
+    color: var(--gray);
 }

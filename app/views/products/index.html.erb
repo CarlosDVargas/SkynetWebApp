@@ -1,14 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<%= render "/shared/navbar" %>
 
-<h1>Products</h1>
+<div class="h-100 w-100 secondary-background">
+  <div class="container mt-5">
+    <p style="color: green"><%= notice %></p>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
+    <div>
+      <%=image_tag("Products-title.svg", :alt => "products-title", :width => "80%",  :class => "mb-3") %>
+      
+      &nbsp;&nbsp;&nbsp;
+
+      <%= link_to new_product_path, class: "btn-agregar" do %>
+          <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Agregar producto
+      <% end %>
+    </div>
+    
+    <div id="products">
+      <% @products.each do |product| %>
+        <%= render product %>
+        <p>
+          <%= link_to "Show this product", product %>
+        </p>
+      <% end %>
+
+      <div class="flickr_pagination mb-4">
+        <%= will_paginate @articles, :container => false %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New product", new_product_path %>
