@@ -12,13 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :product_id, style: "display: block" %>
-    <%= form.text_field :product_id %>
+    <%= form.label "Producto", style: "display: block" %>
+    <%= form.select :product_id, options_for_select(@products.collect { |p| [p.code, p.id] }), {}, class: "form-select" %>
   </div>
 
   <div>
-    <%= form.label :operation_id, style: "display: block" %>
-    <%= form.text_field :operation_id %>
+    <%= form.label "Operación", style: "display: block" %>
+    <%= form.select :operation_id, options_for_select(@operations.collect { |o| [o.code, o.id] }), {}, class: "form-select" %>
   </div>
 
   <div>
