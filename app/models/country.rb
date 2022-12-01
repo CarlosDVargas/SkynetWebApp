@@ -4,4 +4,7 @@ class Country < ApplicationRecord
   end
 
   has_many :routes
+
+  validates :name, :code, presence: true
+
 end
