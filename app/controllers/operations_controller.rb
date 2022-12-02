@@ -21,6 +21,7 @@ class OperationsController < ApplicationController
 
   # POST /operations or /operations.json
   def create
+    #byebug
     @operation = Operation.new(operation_params)
     @operation.country_id = set_country_id
     respond_to do |format|
