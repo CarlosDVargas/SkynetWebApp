@@ -3,7 +3,7 @@
 >
   <div class="container-fluid d-flex">
     <div class="col-6 d-flex align-items-center">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
         <%=image_tag("logo-navbar.svg", :alt => "logo-navbar", :width => "60") %>
       </a>
       <p class="mt-3" style="font-size: 1.4rem">Bienvenido a Skynet</p>
@@ -34,3 +34,5 @@
     </div>
   </div>
 </nav>
+
+<%= render "/shared/sidebar"%>

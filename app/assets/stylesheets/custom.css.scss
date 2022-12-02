@@ -11,6 +11,7 @@
     --gray-dark: #999999;
     --light-blue: #658DC3;
     --light-blue-dark: #4E75AC;
+    --darker-emo: #323232;
 }
 
 * {
@@ -204,6 +205,11 @@ body {
 
 .responsive-width {
     width: 96.6%;
+}
+
+.bg-sidebar {
+    background: var(--darker-emo);
+    color: var(--secondary);
 }
 
 
