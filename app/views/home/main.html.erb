@@ -1,5 +1,23 @@
-<div>
-    <%= link_to "Productos", products_path %> <br><br><br>
-    <%= link_to "Rutas", routes_path %> <br><br><br>
-    <%= link_to "Operaciones", operations_path %>
+<%= render "/shared/navbar" %>
+
+<div class="h-100 w-100 secondary-background">
+    <div class="container mt-5">
+        <p style="color: green"><%= notice %></p>
+
+        <div>
+            <%=image_tag("dashboard-headline.svg", :alt => "dashboard-title", :width => "95%",  :class => "mb-3") %>
+        </div>
+
+        <div class="mt-2">
+            <div class="mb-0">
+                <%=image_tag("dashboard-fila-1.svg", :alt => "dashboard-illustration", :width => "95.5%",  :class => "mb-3") %>
+            </div>
+            <div class="mb-0">
+                <%=image_tag("dashboard-fila-2.svg", :alt => "dashboard-illustration", :width => "95.5%",  :class => "mb-3") %>
+            </div>
+            <div class="mb-0">
+                <%=image_tag("dashboard-fila-3.svg", :alt => "dashboard-illustration", :width => "95.5%",  :class => "mb-3") %>
+            </div>
+        </div>
+    </div>
 </div>

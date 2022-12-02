@@ -43,7 +43,7 @@
             <td style="width: 15%; padding: 1.2rem;"><%= route.operations.length %></td>
             <td style="width: 15%; padding: 1.2rem;"><%= route.operations.length %></td>
             <td style="width: 40%; padding: 1.2rem;">
-              <%= link_to "Detalles", route_path(route), class: "btn-ver" %>
+              <%= link_to "Detalles", route_path(route), class: "btn-ver", route: route %>
               <%= link_to "Eliminar", route_path(route), data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro(a) que deseas eliminar esta ruta?' }, class: "btn-eliminar" %>
             </td>
           </tr>
