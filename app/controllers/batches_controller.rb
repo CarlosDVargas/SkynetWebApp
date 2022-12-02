@@ -75,7 +75,7 @@ class BatchesController < ApplicationController
   end
 
   def create_batch_code
-    byebug
+    #byebug
     user = current_user
     country = Country.find(user.last_connected_country)
     country_code = country.code

@@ -1,9 +1,11 @@
-<h1>New product</h1>
-
-<%= render "form", product: @product %>
-
-<br>
+<%= render "/shared/navbar"%>
 
 <div>
-  <%= link_to "Back to products", products_path %>
+  <div class="container mt-5">
+    <%=image_tag("new-product-headline.svg", :alt => "products-title", :width => "97%",  :class => "mb-3") %>
+    
+    <%= render "form", product: @product %>
+    
+    <br>
+  </div>
 </div>
