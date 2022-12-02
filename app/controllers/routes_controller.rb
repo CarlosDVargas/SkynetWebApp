@@ -1,4 +1,5 @@
 class RoutesController < ApplicationController
+  attr_accessor :route
   before_action :set_route, only: %i[ show edit update destroy ]
   before_action :set_operations, only: %i[ new edit create update ]
   before_action :set_countries, only: %i[ new edit update create ]
@@ -12,6 +13,14 @@ class RoutesController < ApplicationController
 
   # GET /routes/1 or /routes/1.json
   def show
+    unless @route.products.empty?
+      products_length = @route.products.length
+      @products = @route.products.paginate(page: params[:page], per_page: 2)
+    else
+      @products = []
+    end
+    operations_length = @route.operations.length
+    @operations = @route.operations.paginate(page: params[:page], per_page: 2)
   end
 
   # GET /routes/new
@@ -99,6 +108,7 @@ class RoutesController < ApplicationController
     product = Product.find(params[:route][:product_id].to_i)
     @route.code = @route.country.code + product.code + @operations_to_be_added.length.to_s
   end
+
   def set_operations_to_be_added
     @operations_to_be_added = []
     operations = params[:selected_operations]
@@ -106,6 +116,7 @@ class RoutesController < ApplicationController
       @operations_to_be_added << Operation.find(operation.to_i)
     end
   end
+
   # Only allow a list of trusted parameters through.
   def route_params
     params.require(:route).permit(:description, :country_id)

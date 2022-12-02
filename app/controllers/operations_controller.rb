@@ -3,11 +3,15 @@ class OperationsController < ApplicationController
 
   # GET /operations or /operations.json
   def index
-    @operations = Operation.all
+    @operations_length = Operation.all.length
+    @operations = Operation.paginate(page: params[:page], per_page: 6)
+
   end
 
   # GET /operations/1 or /operations/1.json
   def show
+    @batches_length = @operation.batches.length
+    @batches = @operation.batches.paginate(page: params[:page], per_page: 2)
   end
 
   # GET /operations/new

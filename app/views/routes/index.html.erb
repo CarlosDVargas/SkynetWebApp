@@ -40,7 +40,7 @@
         <% @routes.each do |route| %>
           <tr class="table-row-background">
             <td style="width: 30%; padding: 1.2rem;"><%= route.code %></td>
-            <td style="width: 15%; padding: 1.2rem;"><%= route.operations.length %></td>
+            <td style="width: 15%; padding: 1.2rem;"><%= route.products.length %></td>
             <td style="width: 15%; padding: 1.2rem;"><%= route.operations.length %></td>
             <td style="width: 40%; padding: 1.2rem;">
               <%= link_to "Detalles", route_path(route), class: "btn-ver" %>
@@ -58,6 +58,7 @@
 
     </div>
     <%# ------------- %>
+
 
 
 

@@ -39,7 +39,6 @@ class BatchesController < ApplicationController
 
   # PATCH/PUT /batches/1 or /batches/1.json
   def update
-    byebug
     respond_to do |format|
       if @batch.update(batch_params)
         format.html { redirect_to batch_url(@batch), notice: "Batch was successfully updated." }
@@ -77,7 +76,6 @@ class BatchesController < ApplicationController
   end
 
   def create_batch_code
-    #byebug
     user = current_user
     country = Country.find(user.last_connected_country)
     country_code = country.code
