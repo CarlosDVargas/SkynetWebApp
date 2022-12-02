@@ -12,13 +12,18 @@
   <% end %>
 
   <div>
+    <%= form.label :code, style: "display: block" %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.label :country_id, style: "display: block" %>
-    <%= form.text_field :country_id %>
+  <div class="mb-4">
+    <%= form.label "País", class: "form-label" %><br/>
+    <%= form.select :country_id, options_for_select(@countries.collect { |c| [c.name, c.id] }), {}, class: "form-select" %>
   </div>
 
   <div>

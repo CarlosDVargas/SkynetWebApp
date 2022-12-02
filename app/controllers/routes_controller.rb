@@ -1,9 +1,12 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: %i[ show edit update destroy ]
 
+  before_action :set_countries, only: %i[ new edit update create ]
+
   # GET /routes or /routes.json
   def index
-    @routes = Route.all
+    @routes_length = Route.all.length
+    @routes = Route.paginate(page: params[:page], per_page: 7)
   end
 
   # GET /routes/1 or /routes/1.json
@@ -63,8 +66,12 @@ class RoutesController < ApplicationController
       @route = Route.find(params[:id])
     end
 
+    def set_countries
+      @countries = Country.all
+    end
+
     # Only allow a list of trusted parameters through.
     def route_params
-      params.require(:route).permit(:description, :country_id)
+      params.require(:route).permit(:description, :country_id, :code)
     end
 end
