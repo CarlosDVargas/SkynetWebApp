@@ -25,7 +25,7 @@ class RoutesController < ApplicationController
   # POST /routes or /routes.json
   def create
     @route = Route.new(route_params)
-
+    @route.country_id = set_country_id
     respond_to do |format|
       if @route.save
         format.html { redirect_to route_url(@route), notice: "Route was successfully created." }
@@ -61,17 +61,22 @@ class RoutesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_route
-      @route = Route.find(params[:id])
-    end
 
-    def set_countries
-      @countries = Country.all
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_route
+    @route = Route.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def route_params
-      params.require(:route).permit(:description, :country_id, :code)
-    end
+  def set_countries
+    @countries = Country.all
+  end
+
+  def set_country_id
+    @country_id = current_user.last_connected_country
+  end
+
+  # Only allow a list of trusted parameters through.
+  def route_params
+    params.require(:route).permit(:description, :country_id, :code)
+  end
 end

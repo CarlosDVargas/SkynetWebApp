@@ -22,7 +22,7 @@ class OperationsController < ApplicationController
   # POST /operations or /operations.json
   def create
     @operation = Operation.new(operation_params)
-
+    @operation.country_id = set_country_id
     respond_to do |format|
       if @operation.save
         format.html { redirect_to operation_url(@operation), notice: "Operation was successfully created." }
@@ -58,13 +58,18 @@ class OperationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_operation
-      @operation = Operation.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def operation_params
-      params.require(:operation).permit(:description, :route_id, :code)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_operation
+    @operation = Operation.find(params[:id])
+  end
+
+  def set_country_id
+    @country_id = current_user.last_connected_country
+  end
+
+  # Only allow a list of trusted parameters through.
+  def operation_params
+    params.require(:operation).permit(:description, :route_id, :code)
+  end
 end

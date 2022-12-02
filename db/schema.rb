@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_025935) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_02_051154) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_025935) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "code", null: false
+    t.integer "country_id", null: false
     t.index ["operation_id"], name: "index_batches_on_operation_id"
     t.index ["product_id"], name: "index_batches_on_product_id"
   end
@@ -64,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_025935) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "code", null: false
+    t.integer "country_id", null: false
     t.index ["route_id"], name: "index_operations_on_route_id"
   end
 
@@ -108,8 +110,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_025935) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "batches", "countries"
   add_foreign_key "batches", "operations"
   add_foreign_key "batches", "products"
+  add_foreign_key "operations", "countries"
   add_foreign_key "operations", "routes"
   add_foreign_key "routes", "countries"
 end

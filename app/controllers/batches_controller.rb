@@ -25,6 +25,7 @@ class BatchesController < ApplicationController
   def create
     @batch = Batch.new(batch_params)
     @batch.code = create_batch_code
+    @batch.country_id = set_country_id
     respond_to do |format|
       if @batch.save
         format.html { redirect_to batch_url(@batch), notice: "Batch was successfully created." }
@@ -61,10 +62,11 @@ class BatchesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_batch
-      @batch = Batch.find(params[:id])
-    end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_batch
+    @batch = Batch.find(params[:id])
+  end
 
   def set_products
     @products = Product.all
@@ -85,8 +87,13 @@ class BatchesController < ApplicationController
     year = date.year
     @batch_code = "#{country_code}#{year}#{product_code}"
   end
-    # Only allow a list of trusted parameters through.
-    def batch_params
-      params.require(:batch).permit(:product_id, :operation_id, :current_operation, :units)
-    end
+
+  def set_country_id
+    @country_id = current_user.last_connected_country
+  end
+
+  # Only allow a list of trusted parameters through.
+  def batch_params
+    params.require(:batch).permit(:product_id, :operation_id, :current_operation, :units)
+  end
 end

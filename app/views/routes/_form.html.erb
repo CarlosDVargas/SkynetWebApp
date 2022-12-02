@@ -21,11 +21,6 @@
     <%= form.text_area :description %>
   </div>
 
-  <div class="mb-4">
-    <%= form.label "País", class: "form-label" %><br/>
-    <%= form.select :country_id, options_for_select(@countries.collect { |c| [c.name, c.id] }), {}, class: "form-select" %>
-  </div>
-
   <div>
     <%= form.submit %>
   </div>
