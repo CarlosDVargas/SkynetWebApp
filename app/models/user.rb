@@ -10,6 +10,7 @@ class User < ApplicationRecord
   end
 
 
-  validates_presence_of :first_name, :last_name, :username, :email
+  validates_presence_of :first_name, :last_name, :username, :email, :id_number
   validates_length_of :first_name, :last_name, :username, minimum: 3
+  validates_uniqueness_of :username, :email, :id_number
 end
