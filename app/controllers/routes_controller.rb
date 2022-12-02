@@ -7,7 +7,7 @@ class RoutesController < ApplicationController
   # GET /routes or /routes.json
   def index
     @routes_length = Route.all.length
-    @routes = Route.paginate(page: params[:page], per_page: 7)
+    @routes = Route.paginate(page: params[:page], per_page: 6)
   end
 
   # GET /routes/1 or /routes/1.json

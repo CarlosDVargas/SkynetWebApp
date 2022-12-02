@@ -29,20 +29,21 @@
 
     <%# -- tabla de rutas -- %>
     <div id="routes" class="responsive-width mt-4">
-      <table class="table table-bordered text-center">
-        <tr>
+      <table class="table table-bordered text-center shadow-sm">
+        <tr class="table-head-background">
           <th>Nombre de la ruta</th>
+          <th>N° Productos</th>
           <th>N° Operaciones</th>
           <th>Acciones</th>
         </tr>
     
         <% @routes.each do |route| %>
-          <tr>
-            <td style="width: 20%;"><%= route.code %></td>
-            <td style="width: 40%;"><%= route.operations.length %></td>
-            <td style="width: 40%; padding: 1rem;">
+          <tr class="table-row-background">
+            <td style="width: 30%; padding: 1.2rem;"><%= route.code %></td>
+            <td style="width: 15%; padding: 1.2rem;"><%= route.operations.length %></td>
+            <td style="width: 15%; padding: 1.2rem;"><%= route.operations.length %></td>
+            <td style="width: 40%; padding: 1.2rem;">
               <%= link_to "Detalles", route_path(route), class: "btn-ver" %>
-              <%= link_to "Modificar", edit_route_path(route), class: "btn-modificar" %>
               <%= link_to "Eliminar", route_path(route), data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro(a) que deseas eliminar esta ruta?' }, class: "btn-eliminar" %>
             </td>
           </tr>
