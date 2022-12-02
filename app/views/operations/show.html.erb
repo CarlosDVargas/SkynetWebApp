@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<%= render "/shared/navbar" %>
 
-<%= render @operation %>
+<div class="h-100 w-100 secondary-background">
+  <div class="container mt-5">
+    <p style="color: green"><%= notice %></p>
 
-<div>
-  <%= link_to "Edit this operation", edit_operation_path(@operation) %> |
-  <%= link_to "Back to operations", operations_path %>
+    <%# -- Titulo de operación -- %>
+    <div>
+      <%=image_tag("details-operation-headline.svg", :alt => "details-operation-title", :width => "97%",  :class => "mb-3") %>
+    </div>
+    <%# ------------- %>
 
-  <%= button_to "Destroy this operation", @operation, method: :delete %>
+    <%= render @operation %>
+  </div>
 </div>
