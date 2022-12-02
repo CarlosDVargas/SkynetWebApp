@@ -4,6 +4,8 @@
     --secondary: #F8F8F8;
     --secondary-dark: #E8E8E8;
     --dark: #494949;
+    --light: #FFFF;
+    --light-dark: #EDEDED;
     --dark-darker: #1f1f1f;
     --gray: #aaaaaa;
     --gray-dark: #999999;
@@ -33,6 +35,14 @@ body {
 
 .secondary-background {
     background-color: var(--secondary);
+}
+
+.table-head-background {
+    background-color: var(--light-dark);
+}
+
+.table-row-background {
+    background-color: var(--light);
 }
 
 .btn-inicio {

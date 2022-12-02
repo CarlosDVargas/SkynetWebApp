@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<%= render "/shared/navbar" %>
 
-<%= render @product %>
+<div class="h-100 w-100 secondary-background">
+  <div class="container mt-5">
+    <p style="color: green"><%= notice %></p>
 
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
+      <%# -- Titulo de productos y boton de agregar -- %>
+      <div>
+        <%=image_tag("details-product-headline.svg", :alt => "details-products-title", :width => "95%",  :class => "mb-3") %>
+      </div>
+      <%# ------------- %>
 
-  <%= button_to "Destroy this product", @product, method: :delete %>
+      <%= render @product %>
+  </div>
 </div>
