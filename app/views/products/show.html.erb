@@ -1,3 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<%= render "/shared/navbar" %>
 
-<%= render @product %>
+<div class="h-100 w-100 secondary-background">
+  <div class="container mt-5">
+    <p style="color: green"><%= notice %></p>
+
+      <%# -- Titulo de productos y boton de agregar -- %>
+      <div>
+        <%=image_tag("details-product-headline.svg", :alt => "details-products-title", :width => "90%",  :class => "mb-3") %>
+      </div>
+
+      <%= render @product %>
+  </div>
+</div>
