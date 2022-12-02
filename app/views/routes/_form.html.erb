@@ -12,13 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :code, style: "display: block" %>
-    <%= form.text_field :code %>
+    <%= form.label "Producto", style: "display: block" %>
+    <%= form.select :product_id, options_for_select(@products.collect { |p| [p.code, p.id] }), {}, class: "form-select" %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <table class="table table-hover ">
+      <thead>
+      <tr>
+        <th class="text-center" scope="col">Operación</th>
+        <th class="text-center" scope="col">Agregar operación</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @operations.each do |operation| %>
+        <% if operation.route_id.nil? %>
+          <%= render "/routes/operations_table/table_column", operation: operation %>
+        <% end %>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 
   <div>

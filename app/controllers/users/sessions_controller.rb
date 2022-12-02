@@ -27,14 +27,17 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def after_sign_in_path_for(resource)
-    user = current_user
-    country = params[:user][:last_connected_country]
-    user.last_connected_country = country.to_i
-    user.save
+    unless params[:user].nil?
+      user = current_user
+      country = params[:user][:last_connected_country]
+      user.last_connected_country = country.to_i
+      user.save
+    end
     main_home_path
   end
 
   private
+
   def set_countries
     @countries = Country.all
   end
