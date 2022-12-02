@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum role: %i[:engineer, :admin, :manager, :regular]
+  enum role: {:Ingeniero => 0, :Administrador => 1}
   def set_role
-    self.role ||= :regular
+    self.role ||= 0
   end
 
 

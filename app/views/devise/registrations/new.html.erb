@@ -1,29 +1,88 @@
-<h2>Sign up</h2>
+<%= render "/shared/navbar" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="h-100 w-100 secondary-background">
+  <div class="container mt-5">
+  <p style="color: green"><%= notice %></p>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+   <%# -- Titulo de registro %>
+    <div>
+      <%=image_tag("new-user-headline.svg", :alt => "registro-usuario", :width => "100%",  :class => "mb-3") %>
+      
+      &nbsp;&nbsp;&nbsp;
+
+    </div>
+    <%# ------------- %>
+
+  <div> 
+    <div>
+  
+    <div class="col-12">
+        <%=form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> 
+
+         <div class="d-flex align-items-center justify-content-center mt-5">
+            <div class="col-6 " style="padding: 1rem;">
+              <%= f.label "Nombre:"%>
+              <%= f.text_field :first_name, autofocus: true, class:"form-control"%>
+            </div>
+
+            <div class="col-6">
+              <%= f.label "Apellido:"%><br />
+              <%= f.text_field :last_name, autofocus: true, class:"form-control"%>
+            </div>
+         </div>
+         
+         <div class="d-flex align-items-center justify-content-center mt-5">
+            <div class="col-6" style="padding: 1rem;">
+            <%= f.label "Identificación:"%><br />
+            <%= f.text_field :id_number, autofocus: true, class:"form-control"%>
+          </div>
+
+          <div class="col-6">
+            <%= f.label "Usuario:"%><br />
+            <%= f.text_field :username, autofocus: true, class:"form-control"%>
+          </div>
+         </div>
+
+          <div class="d-flex align-items-center justify-content-center mt-5">
+
+              <div class="col-6" style="padding: 1rem;">
+                <%= f.label "Correo:" %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+              </div>
+
+              <div class="col-6">
+                    <%= f.label "Contraseña:"%>
+                    <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> carácteres mínimo)</em>
+                    <% end %><br />
+                    <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+              </div>
+         </div>
+
+          <div class="d-flex align-items-center justify-content-center mt-5">
+              <div class="col-6 " style="padding: 1rem;">
+                <%= f.label "Confirmar contraseña:" %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+              </div>
+  
+          <div class="col-6">
+            <%= f.label "Role:" %><br />
+            <%= f.select :role, options_for_select(User.roles.map {|k,v| [k.humanize.capitalize,v]} ), {}, class: "form-select"%>
+          </div>
+         </div>
+         
+        <div class="d-flex mt-5 align-items-center justify-content-end">
+          <%= link_to "Regresar", root_path, class: "btn-secundario" %>&nbsp;&nbsp;
+            <%= f.submit "Registrar", class:"btn-primario" %>
+        </div>
+        
+
+       </div>
+      <% end %>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
