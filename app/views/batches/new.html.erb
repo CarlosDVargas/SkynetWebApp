@@ -1,6 +1,14 @@
-<h1>New batch</h1>
+<%= render "/shared/navbar"%>
 
-<%= render "form", batch: @batch %>
+<div>
+  <div class="container mt-5">
+    <%=image_tag("addBatchHeadline.svg", :alt => "newBatch-title", :width => "97%",  :class => "mb-3") %>
+    
+    <%= render "form", batch: @batch %>
+    
+    <br>
+  </div>
+</div>
 
 <br>
 
