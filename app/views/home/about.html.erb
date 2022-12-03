@@ -1,18 +1,25 @@
 <%= render "/shared/navbar" %>
 
+<div>
+        <%=image_tag("aboutHeadline.svg", :alt => "about-title", :width => "100%") %>
+      </div>
+      
 <div class="h-100 w-100 secondary-background">
   <div class="container mt-5">
     <p style="color: green"><%= notice %></p>
 
-    <%# -- Titulo de productos y boton de agregar -- %>
-      <div>
-        <%=image_tag("about_headline.svg", :alt => "about-title", :width => "95%",  :class => "mb-3") %>
-      </div>
-      <%# ------------- %>
 
-      <div>
-        <%=image_tag("Adriana.svg", :alt => "team1-title", :class => "mb-3") %>
+
+      <div style="text-align:center">
+        <%=image_tag("AlinaTeam.svg", :alt => "team1-title", :width => "15%", :class => "mb-5 mx-5") %>
+        <%=image_tag("KevinTeam.svg", :alt => "team2-title", :width => "15%", :class => "mb-5 mx-5") %>
+        <%=image_tag("JonathanTeam.svg", :alt => "team3-title", :width => "15%", :class => "mb-5 mx-5" ) %>
       </div>
+
+        <div style="text-align:center">
+      <%=image_tag("AdrianaTeam.svg", :alt => "sm-title", :width => "15%", :class => "mb-3 mx-5") %>
+        <%=image_tag("CarlosTeam.svg", :alt => "po-title", :width => "15%", :class => "mb-3 mx-5") %>
+        </div>
 
   </div>
 </div>
