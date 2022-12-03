@@ -72,7 +72,7 @@ class BatchesController < ApplicationController
   end
 
   def set_operations
-    @operations = Operation.all
+    @operations = Operation.where(country_id: set_country_id)
   end
 
   def create_batch_code

@@ -65,9 +65,11 @@
       </table>
 
       <%# -- paginacion -- %>
-      <div class="flickr_pagination my-5 responsive-width">
-        <%= will_paginate @batches, :container => false %>
-      </div>
+      <% unless @batches.empty? || @batches.nil? %>
+        <div class="flickr_pagination my-5 responsive-width">
+          <%= will_paginate @batches, :container => false %>
+        </div>
+      <% end %>
       <%# ------------- %>
     </div>
   </div>

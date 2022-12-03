@@ -65,7 +65,7 @@
 
   <%# -- paginacion -- %>
   <div class="flickr_pagination my-5 responsive-width">
-    <% unless @products.empty? %>
+    <% unless @products.empty? || @products.nil? %>
       <%= will_paginate @products, :container => false %>
     <% end %>
   </div>
@@ -94,7 +94,9 @@
 
   <%# -- paginacion -- %>
   <div class="flickr_pagination my-5 responsive-width">
-    <%= will_paginate @operations, :container => false %>
+    <% unless @operations.empty? || @operations.nil? %>
+      <%= will_paginate @operations, :container => false %>
+    <% end %>
   </div>
   <%# ------------- %>
 

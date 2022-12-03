@@ -7,8 +7,13 @@ class RoutesController < ApplicationController
 
   # GET /routes or /routes.json
   def index
-    @routes_length = Route.all.length
-    @routes = Route.paginate(page: params[:page], per_page: 6)
+    @routes = Route.where(country_id: set_country_id)
+    @routes_length = Route.where(country_id: set_country_id).length
+    if @routes.nil? || @routes.empty?
+      @routes = []
+    else
+      @routes = @routes.paginate(page: params[:page], per_page: 6)
+    end
   end
 
   # GET /routes/1 or /routes/1.json
@@ -97,7 +102,7 @@ class RoutesController < ApplicationController
   end
 
   def set_operations
-    @operations = Operation.all
+    @operations = Operation.where(country_id: set_country_id)
   end
 
   def set_products

@@ -6,12 +6,12 @@
 
     <%# -- Titulo de ruta y boton de agregar -- %>
     <div>
-      <%=image_tag("Routes-title.svg", :alt => "routes-title", :width => "83%",  :class => "mb-3") %>
-      
+      <%= image_tag("Routes-title.svg", :alt => "routes-title", :width => "83%", :class => "mb-3") %>
+
       &nbsp;&nbsp;&nbsp;
 
       <%= link_to new_route_path, class: "btn-agregar" do %>
-          <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Agregar ruta
+        <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Agregar ruta
       <% end %>
     </div>
     <%# ------------- %>
@@ -22,7 +22,7 @@
         <p><%= @routes_length %> Resultados</p>
       </div>
       <div class="col-6 container text-end">
-        <%=image_tag("search-tools.svg", :alt => "search-tools", :width => "80%",  :class => "mb-3", :style => "margin-right: 5%;") %>
+        <%= image_tag("search-tools.svg", :alt => "search-tools", :width => "80%", :class => "mb-3", :style => "margin-right: 5%;") %>
       </div>
     </div>
     <%# ------------- %>
@@ -36,7 +36,7 @@
           <th>N° Operaciones</th>
           <th>Acciones</th>
         </tr>
-    
+
         <% @routes.each do |route| %>
           <tr class="table-row-background">
             <td style="width: 30%; padding: 1.2rem;"><%= route.code %></td>
@@ -47,19 +47,19 @@
               <%= link_to "Eliminar", route_path(route), data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro(a) que deseas eliminar esta ruta?' }, class: "btn-eliminar" %>
             </td>
           </tr>
-        <% end %>    
+        <% end %>
       </table>
 
       <%# -- paginacion -- %>
-      <div class="flickr_pagination my-5 responsive-width">
-        <%= will_paginate @routes, :container => false %>
-      </div>
+      <% unless @routes.empty? || @routes.nil? %>
+        <div class="flickr_pagination my-5 responsive-width">
+          <%= will_paginate @routes, :container => false %>
+        </div>
+      <% end %>
       <%# ------------- %>
 
     </div>
     <%# ------------- %>
-
-
 
 
   </div>
