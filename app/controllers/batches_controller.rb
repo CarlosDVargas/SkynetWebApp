@@ -28,8 +28,9 @@ class BatchesController < ApplicationController
     @batch.country_id = set_country_id
     respond_to do |format|
       if @batch.save
-        format.html { redirect_to batch_url(@batch), notice: "Batch was successfully created." }
-        format.json { render :show, status: :created, location: @batch }
+        @operation = Operation.find(@batch.operation_id)
+        format.html { redirect_to operation_url(@operation), notice: "Batch was successfully created." }
+        format.json { render :show, status: :created, location: @operation }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @batch.errors, status: :unprocessable_entity }
@@ -79,8 +80,8 @@ class BatchesController < ApplicationController
     user = current_user
     country = Country.find(user.last_connected_country)
     country_code = country.code
-    product = Product.find(@batch.product_id)
-    product_code = product.code
+    @product = Product.find(@batch.product_id)
+    product_code = @product.code
     date = Date.today
     year = date.year
     @batch_code = "#{country_code}#{year}#{product_code}"

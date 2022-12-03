@@ -39,21 +39,20 @@ class RoutesController < ApplicationController
 
   # POST /routes or /routes.json
   def create
-    byebug
     set_operations_to_be_added
     @route = Route.new(route_params)
-    @route.code = "code"
+    @route.code = "code" + Random.random_number(1000).to_s
     @route.country_id = set_country_id
+    unless @operations_to_be_added.empty?
+      @operations_to_be_added.each do |operation|
+        operation.route_id = @route.id
+        operation.save
+        @route.operations << operation
+      end
+    end
+    create_route_code
     respond_to do |format|
       if @route.save
-        @operations_to_be_added.each do |operation|
-          operation.route_id = @route.id
-          operation.save
-          @route.operations << operation
-          @route.save
-        end
-        create_route_code
-        @route.save
         format.html { redirect_to route_url(@route), notice: "Route was successfully created." }
         format.json { render :show, status: :created, location: @route }
       else
@@ -117,8 +116,10 @@ class RoutesController < ApplicationController
   def set_operations_to_be_added
     @operations_to_be_added = []
     operations = params[:selected_operations]
-    operations.each do |operation|
-      @operations_to_be_added << Operation.find(operation.to_i)
+    unless operations.nil?
+      operations.each do |operation|
+        @operations_to_be_added << Operation.find(operation.to_i)
+      end
     end
   end
 
