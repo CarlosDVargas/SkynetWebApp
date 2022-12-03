@@ -28,7 +28,8 @@
         <span class="vertical-divider px-4">|</span>
 
         <div class="mt-2">
-          <%=image_tag("cr-flag-icon", :alt => "cr-flag-icon", :class => "mb-2") %>
+          <% country = Country.find(current_user.last_connected_country.to_i) %>
+          <%=image_tag(country.icon, style: 'height:35px; width:35px;',:alt => "cr-flag-icon", :class => "mb-2") %>
         </div>
       </div>
     </div>

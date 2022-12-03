@@ -9,7 +9,3 @@
       </div>
   </div>
 </div>
-<% if current_user %>
-  <%= current_user.username %>
-  <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
-<% end %>

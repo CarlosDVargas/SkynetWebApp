@@ -1,6 +1,6 @@
 class Country < ApplicationRecord
   has_one_attached :icon do |attachable|
-    attachable.variant :thumb, resize: "100x100"
+    attachable.variant :thumb, resize: "10x10"
   end
 
   has_many :routes
