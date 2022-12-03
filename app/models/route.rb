@@ -16,6 +16,7 @@ class Route < ApplicationRecord
     end
     products = products.uniq
   end
+
   def has_one_operation_at_least
     if operations.empty?
       errors.add(:operations, "Route must have at least one operation")

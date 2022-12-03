@@ -1,45 +1,45 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header bg-sidebar">
-    <%=image_tag("logo-sidebar.svg", :alt => "logo-sidebar", :width => "95%",  :class => "py-2 px-5 offcanvas-title", :id => "offcanvasExampleLabel") %>
+    <%= image_tag("logo-sidebar.svg", :alt => "logo-sidebar", :width => "95%", :class => "py-2 px-5 offcanvas-title", :id => "offcanvasExampleLabel") %>
     <button type="button" class="btn-close text-reset text-light" data-bs-dismiss="offcanvas" aria-label="Close" style="margin-right: 2rem;"></button>
   </div>
   <div class="offcanvas-body bg-sidebar">
     <div class="dropdown mt-3 text-light">
-        <ul class="navbar-nav mr-auto" style="margin-left:4.5rem;">
-            <li class="nav-item active mb-5">
-                <%= link_to main_home_path do %>
-                    <%=image_tag("sidebar-inicio.svg", :alt => "user-icon", :class => "mb-2") %>
-                <% end %>
-            </li>
-            <li class="nav-item active mb-5">
-                <%= link_to products_path do %>
-                    <%=image_tag("sidebar-productos.svg", :alt => "user-icon", :class => "mb-2") %>
-                <% end %>
-            </li>
-            <li class="nav-item active mb-5">
-                <%= link_to routes_path do %>
-                    <%=image_tag("sidebar-rutas.svg", :alt => "user-icon", :class => "mb-2") %>
-                <% end %>
-            </li>
-            <li class="nav-item active mb-5">
-                <%= link_to operations_path do %>
-                    <%=image_tag("sidebar-ajustes.svg", :alt => "user-icon", :class => "mb-2") %>
-                <% end %>
-            </li>
-            <li class="nav-item active mb-5">
-                <%= link_to main_about_path do %>
-                    <%=image_tag("sidebar-nosotros.svg", :alt => "user-icon", :class => "mb-2") %>
-                <% end %>
-            </li>
-            <li class="nav-item active mb-5">
-                <%= button_to destroy_user_session_path, :method => "delete", data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro(a) que deseas salir?' }, :class => "btn" do %>
-                    <%=image_tag("sidebar-salir.svg", :alt => "user-icon", :class => "mb-2") %>
-                <% end %>
-            </li>
-        </ul>
-        <div class="text-center mt-5">
-            <%=image_tag("app-version.svg", :alt => "user-icon", :class => "mb-2") %>
-        </div>
+      <ul class="navbar-nav mr-auto" style="margin-left:4.5rem;">
+        <li class="nav-item active mb-5">
+          <%= link_to main_home_path do %>
+            <%= image_tag("sidebar-inicio.svg", :alt => "user-icon", :class => "mb-2") %>
+          <% end %>
+        </li>
+        <li class="nav-item active mb-5">
+          <%= link_to products_path do %>
+            <%= image_tag("sidebar-productos.svg", :alt => "user-icon", :class => "mb-2") %>
+          <% end %>
+        </li>
+        <li class="nav-item active mb-5">
+          <%= link_to routes_path do %>
+            <%= image_tag("sidebar-rutas.svg", :alt => "user-icon", :class => "mb-2") %>
+          <% end %>
+        </li>
+        <li class="nav-item active mb-5">
+          <%= link_to operations_path do %>
+            <%= image_tag("sidebar-ajustes.svg", :alt => "user-icon", :class => "mb-2") %>
+          <% end %>
+        </li>
+        <li class="nav-item active mb-5">
+          <%= link_to main_about_path do %>
+            <%= image_tag("sidebar-nosotros.svg", :alt => "user-icon", :class => "mb-2") %>
+          <% end %>
+        </li>
+        <li class="nav-item active mb-5">
+          <%= button_to destroy_user_session_path, :method => "delete", data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro(a) que deseas salir?' }, :class => "btn" do %>
+            <%= image_tag("sidebar-salir.svg", :alt => "user-icon", :class => "mb-2") %>
+          <% end %>
+        </li>
+      </ul>
+      <div class="text-center mt-5">
+        <%= image_tag("app-version.svg", :alt => "user-icon", :class => "mb-2") %>
+      </div>
     </div>
   </div>
 </div>

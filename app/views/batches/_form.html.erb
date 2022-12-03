@@ -1,14 +1,14 @@
 <div class="responsive-width mt-4">
   <%= form_with(model: batch) do |form| %>
-      <%= render 'shared/errors', obj: @batch %>
+    <%= render 'shared/errors', obj: @batch %>
+    <div>
       <div>
         <div>
-          <div>
-            <%= form.label "Producto", style: "display: block" %>
-            <%= form.select :product_id, options_for_select(@products.collect { |p| [p.code, p.id] }), {}, class: "form-select" %>
-          </div>
-          
-          <br>
+          <%= form.label "Producto", style: "display: block" %>
+          <%= form.select :product_id, options_for_select(@products.collect { |p| [p.code, p.id] }), {}, class: "form-select" %>
+        </div>
+
+        <br>
 
         <div>
           <%= form.label "Operación", style: "display: block" %>
