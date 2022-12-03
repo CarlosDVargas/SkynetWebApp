@@ -1,9 +1,12 @@
-<h1>New route</h1>
-
-<%= render "form", route: @route %>
-
-<br>
+<%= render "/shared/navbar"%>
 
 <div>
-  <%= link_to "Back to routes", routes_path %>
+  <div class="container mt-5">
+    <%=image_tag("new-route-headline.svg", :alt => "new-route-title", :width => "97%",  :class => "mb-3") %>
+    
+    <%= render "form", route: @route %>
+    
+    <br>
+  </div>
+
 </div>

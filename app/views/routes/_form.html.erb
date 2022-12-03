@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-4">
     <%= form.label "Producto", style: "display: block" %>
     <%= form.select :product_id, options_for_select(@products.collect { |p| [p.code, p.id] }), {}, class: "form-select" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:"form-control"%>
   </div>
 
-  <div>
+  <div class="mt-4">
     <table class="table table-hover ">
       <thead>
       <tr>
@@ -39,7 +39,9 @@
     </table>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="d-flex mt-5 align-items-center justify-content-end">
+  <%= link_to "Regresar", routes_path, class: "btn-secundario" %>&nbsp;&nbsp;
+  <%= form.submit "Crear Ruta", class: "btn-primario" %>
   </div>
+
 <% end %>
