@@ -1,16 +1,6 @@
 <div class="responsive-width">
   <%= form_with(model: product) do |form| %>
-    <% if product.errors.any? %>
-      <div style="color: red" class="mt-3">
-        <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-  
-        <ul>
-          <% product.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= render 'shared/errors', obj: @product %>
 
     <div class="d-flex mt-5">
       <div class="col-6">
