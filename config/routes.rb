@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :routes
   resources :countries
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
 
   get 'main/home', to: 'home#main', as: 'main_home'
