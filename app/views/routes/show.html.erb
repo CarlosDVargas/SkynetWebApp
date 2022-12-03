@@ -1,6 +1,6 @@
 <%= render "/shared/navbar" %>
 
-<div class="h-20 w-20 secondary-background">
+<div class="h-100 w-100 secondary-background">
   <div class="container mt-5">
     <p style="color: green"><%= notice %></p>
 
@@ -10,32 +10,18 @@
       
       &nbsp;&nbsp;&nbsp;
 
-      <%= link_to new_route_path, class: "btn-eliminar" do %>
+      <%= link_to "#", class: "btn-eliminar" do %>
           <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Eliminar ruta
       <% end %>
     </div>
     <%# ------------- %>
 
-    <%# -- resultados de busqueda -- %>
-    <div class="d-flex align-items-center justify-content-center mt-5">
-      <div class="col-6">
-        <p><%= @routes_length %> Resultados</p>
-      </div>
-      <div class="col-6 container text-end">
-        <%=image_tag("search-tools.svg", :alt => "search-tools", :width => "80%",  :class => "mb-3", :style => "margin-right: 5%;") %>
-      </div>
+    <div class="mt-4 mb-5">
+      <%= render @route%>
     </div>
-    <%# ------------- %>
 
-    <%= render @route%>
-
+    <div class="d-flex mt-5 pb-5 align-items-center justify-content-end" style="margin-right: 4%;">
+    <%= link_to "Regresar", routes_path, class: "btn-secundario" %>
+    </div>
   </div>
-</div>
-
-
-<div>
-  <%= link_to "Edit this route", edit_route_path(@route) %> |
-  <%= link_to "Back to routes", routes_path %>
-
-  <%= button_to "Destroy this route", @route, method: :delete %>
 </div>
