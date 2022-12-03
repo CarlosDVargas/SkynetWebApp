@@ -7,8 +7,8 @@
   </thead>
   <tbody>
   <% @operations.each do |operation| %>
-    <% if operation.route_id.nil?  %>
-      <%= render "/routes/operations_table/table_column", operation: operation%>
+    <% if operation.route_id.nil? %>
+      <%= render "/routes/operations_table/table_column", operation: operation %>
     <% end %>
   <% end %>
   </tbody>

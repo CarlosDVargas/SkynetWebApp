@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es" class="h-100">
-  <head>
-    <title>SkynetWebApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>SkynetWebApp</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "pagination", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
-  <body class="h-100 mt-0" style="background-color:#F8F8F8;">
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "pagination", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
+<body class="h-100 mt-0" style="background-color:#F8F8F8;">
+<%= yield %>
+</body>
 </html>

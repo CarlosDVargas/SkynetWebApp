@@ -1,11 +1,11 @@
-<%= render "/shared/navbar"%>
+<%= render "/shared/navbar" %>
 
 <div>
   <div class="container mt-5">
-    <%=image_tag("new-product-headline.svg", :alt => "products-title", :width => "97%",  :class => "mb-3") %>
-    
+    <%= image_tag("new-product-headline.svg", :alt => "products-title", :width => "97%", :class => "mb-3") %>
+
     <%= render "form", product: @product %>
-    
+
     <br>
   </div>
 </div>

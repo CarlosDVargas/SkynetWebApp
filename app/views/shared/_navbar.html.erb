@@ -4,7 +4,7 @@
   <div class="container-fluid d-flex">
     <div class="col-6 d-flex align-items-center">
       <a class="navbar-brand" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        <%=image_tag("logo-navbar.svg", :alt => "logo-navbar", :width => "60") %>
+        <%= image_tag("logo-navbar.svg", :alt => "logo-navbar", :width => "60") %>
       </a>
       <p class="mt-3" style="font-size: 1.4rem">Bienvenido a Skynet</p>
     </div>
@@ -13,7 +13,7 @@
       <div class="d-flex align-items-center justify-content-end">
         <div class="mt-2">
           <a href="#" class="text-decoration-none text-muted">
-            <%=image_tag("notification-icon.svg", :alt => "notification-icon", :class => "mb-2") %>
+            <%= image_tag("notification-icon.svg", :alt => "notification-icon", :class => "mb-2") %>
           </a>
         </div>
 
@@ -21,7 +21,7 @@
 
         <div class="mt-2">
           <a href="#" class="text-decoration-none text-muted">
-            <%=image_tag("user-icon.svg", :alt => "user-icon", :class => "mb-2") %>
+            <%= image_tag("user-icon.svg", :alt => "user-icon", :class => "mb-2") %>
           </a>
         </div>
 
@@ -29,11 +29,11 @@
 
         <div class="mt-2">
           <% country = Country.find(current_user.last_connected_country.to_i) %>
-          <%=image_tag(country.icon, style: 'height:35px; width:35px;',:alt => "cr-flag-icon", :class => "mb-2") %>
+          <%= image_tag(country.icon, style: 'height:35px; width:35px;', :alt => "cr-flag-icon", :class => "mb-2") %>
         </div>
       </div>
     </div>
   </div>
 </nav>
 
-<%= render "/shared/sidebar"%>
+<%= render "/shared/sidebar" %>

@@ -4,12 +4,12 @@
   <div class="container mt-5">
     <p style="color: green"><%= notice %></p>
 
-      <%# -- Titulo de productos y boton de agregar -- %>
-      <div>
-        <%=image_tag("details-product-headline.svg", :alt => "details-products-title", :width => "95%",  :class => "mb-3") %>
-      </div>
-      <%# ------------- %>
+    <%# -- Titulo de productos y boton de agregar -- %>
+    <div>
+      <%= image_tag("details-product-headline.svg", :alt => "details-products-title", :width => "95%", :class => "mb-3") %>
+    </div>
+    <%# ------------- %>
 
-      <%= render @product %>
+    <%= render @product %>
   </div>
 </div>

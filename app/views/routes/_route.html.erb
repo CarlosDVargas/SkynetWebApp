@@ -16,17 +16,17 @@
   </div>
 
   <div class="mt-3">
-    <%=image_tag("horizontal-divider.svg", :alt => "horizontal-divider", :width => "97%",  :class => "mb-3") %>
+    <%= image_tag("horizontal-divider.svg", :alt => "horizontal-divider", :width => "97%", :class => "mb-3") %>
   </div>
 
   <%# -- resultados de busqueda -- %>
   <div class="d-flex align-items-center justify-content-center mt-5 responsive-width">
     <div class="col-6">
-      <%=image_tag("routes-operations-headline.svg", :alt => "routesDetails-title", :width => "20%",  :class => "mb-3") %>
+      <%= image_tag("routes-operations-headline.svg", :alt => "routesDetails-title", :width => "20%", :class => "mb-3") %>
     </div>
     <div class="col-6 container text-end">
       <%= link_to new_operation_path, class: "btn-agregar" do %>
-          <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Agregar operación
+        <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Agregar operación
       <% end %>
     </div>
   </div>
@@ -61,7 +61,7 @@
   <%# ------------- %>
 
   <div class="mt-2">
-    <%=image_tag("horizontal-divider.svg", :alt => "horizontal-divider", :width => "97%",  :class => "mb-3") %>
+    <%= image_tag("horizontal-divider.svg", :alt => "horizontal-divider", :width => "97%", :class => "mb-3") %>
   </div>
 
   <%# -- resultados de busqueda -- %>
@@ -73,7 +73,7 @@
       <p><%= @route.products.count %> Resultados</p>
     </div>
     <div class="col-6 container text-end">
-      <%=image_tag("search-tools.svg", :alt => "search-tools", :width => "80%",  :class => "mb-3", :style => "margin-right: 5%;") %>
+      <%= image_tag("search-tools.svg", :alt => "search-tools", :width => "80%", :class => "mb-3", :style => "margin-right: 5%;") %>
     </div>
   </div>
   <%# ------------- %>
