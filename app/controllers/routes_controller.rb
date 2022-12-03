@@ -101,7 +101,7 @@ class RoutesController < ApplicationController
   end
 
   def set_operations
-    @operations = Operation.where(country_id: set_country_id)
+    @operations = Operation.where(country_id: set_country_id, route_id: nil)
   end
 
   def set_products

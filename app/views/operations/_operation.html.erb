@@ -25,7 +25,7 @@
       <%= image_tag("personal-encargado.svg", :alt => "routesDetails-title", :class => "mb-3") %>
     </div>
     <div class="col-6 container text-end">
-      <%= link_to new_operation_path, class: "btn-agregar" do %>
+      <%= link_to "#", class: "btn-agregar" do %>
         <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Asignar personal
       <% end %>
     </div>
@@ -81,7 +81,7 @@
             <td style="width: 23%; padding: 1.2rem;"><%= batch.current_operation %></td>
             <td style="width: 31%; padding: 1.2rem;">
               <%= link_to "Detalles", batch_path(batch), class: "btn-ver" %>
-              <%= link_to "Modificar", edit_batch_path(batch), class: "btn-modificar" %>
+              <%= link_to "Modificar", "#", class: "btn-modificar" %>
               <%= link_to "Eliminar", batch_path(batch), data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro(a) que deseas eliminar este lote?' }, class: "btn-eliminar" %>
             </td>
           </tr>
