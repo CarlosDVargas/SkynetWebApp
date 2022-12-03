@@ -1,9 +1,11 @@
-<h1>New operation</h1>
-
-<%= render "form", operation: @operation %>
-
-<br>
+<%= render "/shared/navbar"%>
 
 <div>
-  <%= link_to "Back to operations", operations_path %>
+  <div class="container mt-5">
+    <%=image_tag("new-operation-headline.svg", :alt => "new-operation-headline", :width => "97%",  :class => "mb-3") %>
+    
+    <%= render "form", operation: @operation %>
+    
+    <br>
+  </div>
 </div>
