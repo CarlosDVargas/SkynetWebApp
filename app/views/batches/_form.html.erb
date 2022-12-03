@@ -1,25 +1,14 @@
 <div class="responsive-width mt-4">
   <%= form_with(model: batch) do |form| %>
-    <% if batch.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(batch.errors.count, "error") %> prohibited this batch from being saved:</h2>
-
-        <ul>
-          <% batch.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div>
+      <%= render 'shared/errors', obj: @batch %>
       <div>
         <div>
-          <%= form.label "Producto", style: "display: block" %>
-          <%= form.select :product_id, options_for_select(@products.collect { |p| [p.code, p.id] }), {}, class: "form-select" %>
-        </div>
-
-        <br>
+          <div>
+            <%= form.label "Producto", style: "display: block" %>
+            <%= form.select :product_id, options_for_select(@products.collect { |p| [p.code, p.id] }), {}, class: "form-select" %>
+          </div>
+          
+          <br>
 
         <div>
           <%= form.label "Operación", style: "display: block" %>
