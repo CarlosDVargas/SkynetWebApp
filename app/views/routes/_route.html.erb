@@ -9,8 +9,8 @@
       </tr>
       <tr class="table-row-background">
         <td style="width: 20%; padding: 1rem;"><%= route.code %></td>
-        <td style="width: 40%; padding: 1rem;"><%= route.operations.length %></td>
-        <td style="width: 40%; padding: 1rem;"><%= route.operations.length %></td>
+        <td style="width: 40%; padding: 1rem;"><%= route.products.count %></td>
+        <td style="width: 40%; padding: 1rem;"><%= route.operations.count %></td>
       </tr>
     </table>
   </div>
@@ -100,7 +100,7 @@
   </div>
 
   <%# -- paginacion -- %>
-  <div class="flickr_pagination my-5 responsive-width">
+  <div class="flickr_pagination mt-5 mb-3 responsive-width">
     <% unless @products.empty? %>
       <%= will_paginate @products, :container => false %>
     <% end %>

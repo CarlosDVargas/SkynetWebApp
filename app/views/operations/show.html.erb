@@ -5,11 +5,15 @@
     <p style="color: green"><%= notice %></p>
 
     <%# -- Titulo de operación -- %>
-    <div>
-      <%=image_tag("details-operation-headline.svg", :alt => "details-operation-title", :width => "97%",  :class => "mb-3") %>
+    <div class="">
+      <%=image_tag("operation-details-headline.svg", :alt => "details-operation-title", :width => "96%",  :class => "mb-5") %>
     </div>
     <%# ------------- %>
 
     <%= render @operation %>
+
+    <div class="d-flex mt-3 pb-5 align-items-center justify-content-end" style="margin-right: 4%;">
+      <%= link_to "Regresar", :back, class: "btn-secundario" %>
+    </div>
   </div>
 </div>

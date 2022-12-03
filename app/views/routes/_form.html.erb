@@ -30,9 +30,15 @@
       </tr>
       </thead>
       <tbody>
-      <% @operations.each do |operation| %>
-        <% if operation.route_id.nil? %>
-          <%= render "/routes/operations_table/table_column", operation: operation %>
+      <% if @operations.empty? %>
+        <tr>
+          <td colspan="2" class="text-center">No hay operaciones...<a href="<%= new_operation_path %>"><i>Agregar operación</i></a></td>
+        </tr>
+      <% else %>
+        <% @operations.each do |operation| %>
+          <% if operation.route_id.nil? %>
+            <%= render "/routes/operations_table/table_column", operation: operation %>
+          <% end %>
         <% end %>
       <% end %>
       </tbody>
