@@ -39,7 +39,7 @@ class RoutesController < ApplicationController
 
   # POST /routes or /routes.json
   def create
-    #byebug
+    byebug
     set_operations_to_be_added
     @route = Route.new(route_params)
     @route.code = "code"
