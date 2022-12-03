@@ -15,20 +15,31 @@
                 <%= link_to products_path do %>
                     <%=image_tag("sidebar-productos.svg", :alt => "user-icon", :class => "mb-2") %>
                 <% end %>
-            </li><li class="nav-item active mb-5">
+            </li>
+            <li class="nav-item active mb-5">
                 <%= link_to routes_path do %>
                     <%=image_tag("sidebar-rutas.svg", :alt => "user-icon", :class => "mb-2") %>
                 <% end %>
-            </li><li class="nav-item active mb-5">
+            </li>
+            <li class="nav-item active mb-5">
                 <%= link_to operations_path do %>
                     <%=image_tag("sidebar-ajustes.svg", :alt => "user-icon", :class => "mb-2") %>
                 <% end %>
-            </li><li class="nav-item active mb-5">
+            </li>
+            <li class="nav-item active mb-5">
+                <%= link_to main_about_path do %>
+                    <%=image_tag("sidebar-nosotros.svg", :alt => "user-icon", :class => "mb-2") %>
+                <% end %>
+            </li>
+            <li class="nav-item active mb-5">
                 <%= button_to destroy_user_session_path, :method => "delete", data: { 'turbo-method': :delete, 'turbo-confirm': '¿Estás seguro(a) que deseas salir?' }, :class => "btn" do %>
                     <%=image_tag("sidebar-salir.svg", :alt => "user-icon", :class => "mb-2") %>
                 <% end %>
             </li>
         </ul>
+        <div class="text-center mt-5">
+            <%=image_tag("app-version.svg", :alt => "user-icon", :class => "mb-2") %>
+        </div>
     </div>
   </div>
 </div>
