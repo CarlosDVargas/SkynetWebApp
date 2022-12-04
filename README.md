@@ -43,7 +43,7 @@ Aplicación Web para el manejo de productos, lotes, operaciones y rutas, como pa
 ![Screenshot from 2022-12-04 14-09-02](https://user-images.githubusercontent.com/103754829/205513566-00202394-2fa9-4e6e-8e6d-fd4c503d023b.png)
 
 
-### Built with:
+### Desarrollado con:
 - HTML
 - JavaScript
 - CSS
@@ -52,11 +52,11 @@ Aplicación Web para el manejo de productos, lotes, operaciones y rutas, como pa
 - Rails 7.0.4
 - SQLite3
 
-### Developers:
+### Equipo de desarrollo:
 - Adriana Arroyo
 - Alina Rodriguez
 - Carlos Vargas
 - Jonathan Reyes
 - Kevin Alvarado
 
-_Developed in 2022_
+_Desarrollado en 2022_
